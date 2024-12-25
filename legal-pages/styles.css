@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #FADADD; /* Soft Pink */
+    color: #4A4A4A; /* Charcoal Gray */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    direction: rtl; /* Right-to-left text for Hebrew */
+}
+
+header {
+    background-color: #B388EB; /* Deep Mauve */
+    color: #FFFFFF; /* White text */
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #FFFFFF; /* White background for readability */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+}
+
+h1, h2 {
+    color: #B388EB; /* Deep Mauve */
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem; /* Main heading size */
+}
+
+h2 {
+    font-size: 1.8rem; /* Subheading size */
+}
+
+p, ul, li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px; /* Indentation for bullets */
+}
+
+a {
+    color: #B388EB; /* Deep Mauve for links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #4A4A4A; /* Charcoal Gray on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #4A4A4A; /* Charcoal Gray */
+    color: #FFFFFF; /* White text */
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2rem; /* Adjust header size for smaller screens */
+    }
+
+    main {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust main heading size */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjust subheading size */
+    }
+
+    p, ul, li {
+        font-size: 1rem; /* Adjust text size for better readability */
+    }
+}
