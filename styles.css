@@ -133,9 +133,9 @@ header {
 #hero {
     position: relative;
     height: 100vh; /* Full viewport height */
-    background-image: url('../assets/hero-bg2.webp'); /* Background image path */
+    background-image: url('/assets/hero-bg2.webp'); /* Mobile-specific background image */
     background-size: cover; /* Ensures the image covers the section */
-    background-position: center; /* Centers the image */
+    background-position: center 20%; /* Crops 20% from the top for better centering */
     background-repeat: no-repeat; /* Prevents repeating */
     display: flex;
     justify-content: center;
@@ -144,6 +144,7 @@ header {
     color: #FFFFFF; /* White text for contrast */
     overflow: hidden; /* Ensures no overflow issues */
 }
+
 
 /* Dark Overlay */
 #hero::before {
@@ -163,8 +164,8 @@ header {
     z-index: 2; /* Ensures content is above the overlay */
     max-width: 800px; /* Restricts width for better readability */
     padding: 20px;
-    animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
 }
+
 
 /* Hero Heading (h1) */
 .hero-content h1 {
@@ -239,32 +240,84 @@ header {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design for Hero Section */
 @media (max-width: 768px) {
     #hero {
-        padding: 20px;
+        background-image: url('/assets/hero-bg-mobile.png'); /* Mobile-specific background image */
+        background-size: cover; /* Ensures the image covers the section */
+        background-position: center 10%; /* Adjust cropping for mobile */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align content higher */
+        align-items: center; /* Center horizontally */
+        text-align: center; /* Align text in the center */
+        padding: 40px 20px; /* Add some padding for spacing */
+        height: 100vh; /* Ensure the section takes full viewport height */
+        position: relative; /* For consistent positioning */
+    }
+
+    #hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+        z-index: 1; /* Overlay sits behind the content */
+    }
+
+    .hero-content {
+        position: relative; /* Ensure content is above the overlay */
+        z-index: 2; /* Content is above the background and overlay */
+        margin-top: 190px; /* Adjust spacing from the top */
+        max-width: 90%; /* Limit content width for smaller screens */
     }
 
     .hero-content h1 {
         font-size: 3rem; /* Adjusted for smaller screens */
-        line-height: 1.3;
+        line-height: 1.3; /* Improve line spacing */
+        margin-bottom: 15px; /* Add spacing below the heading */
+        color: #FFD1D1; /* Consistent heading color */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow for readability */
     }
 
     .hero-content p {
         font-size: 1.2rem; /* Adjusted for smaller screens */
+        margin-bottom: 10px; /* Add spacing below paragraphs */
+        color: #FFFFFF; /* White text for readability */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for better visibility */
     }
 
     .hero-content .subtext {
-        font-size: 1.1rem; /* Adjusted for smaller screens */
+        font-size: 1.1rem; /* Slightly smaller text for the subtext */
+        margin-bottom: 20px; /* Add spacing below the subtext */
+        color: #FFD1D1; /* Subtle pink tone */
+        font-style: italic; /* Emphasis with italics */
     }
 
     .cta-button-hero {
         font-size: 1.4rem; /* Smaller button text */
         padding: 12px 40px; /* Adjusted button size */
+        border-radius: 30px; /* Rounded button for consistency */
+        color: #FFFFFF; /* White button text */
+        background-color: #B388EB; /* Deep Mauve background */
+        text-decoration: none; /* Remove underline */
+        display: inline-flex; /* Align items inside the button */
+        align-items: center; /* Center button text and icon */
+        gap: 12px; /* Space between icon and text */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+        transition: all 0.3s ease-in-out; /* Smooth hover effects */
+    }
+
+    .cta-button-hero:hover {
+        background-color: #4A4A4A; /* Charcoal Gray on hover */
+        transform: translateY(-3px); /* Slight lift effect on hover */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
     }
 
     .cta-button-hero i {
-        font-size: 1.6rem; /* Adjusted icon size */
+        font-size: 1.6rem; /* Adjusted icon size for mobile */
     }
 }
 
@@ -272,7 +325,7 @@ header {
 /* About Section */
 #about {
     background-color: #FADADD; /* Soft Pink */
-    padding: 50px 20px;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,38 +336,39 @@ header {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
-    gap: 30px;
+    gap: 40px; /* Increased gap for better spacing */
     align-items: center;
 }
 
 /* About Image Styling */
 .about-image img {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px; /* Slightly larger for better visibility */
     border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
     animation: fadeIn 1.5s ease-in-out;
+    object-fit: cover; /* Ensure the image scales properly */
 }
 
 /* About Text Styling */
 .about-text {
     max-width: 600px;
+    line-height: 1.6; /* Comfortable line spacing */
 }
 
 .about-text h2 {
     font-family: 'Heebo', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
     color: #B388EB; /* Deep Mauve */
     margin-bottom: 20px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
 }
 
 .about-text p {
     font-family: 'Rubik', sans-serif;
     font-size: 1.4rem;
     margin-bottom: 20px;
-    line-height: 1.6;
     color: #4A4A4A; /* Charcoal Gray */
 }
 
@@ -325,13 +379,13 @@ header {
     color: #FFFFFF; /* White */
     background-color: #B388EB; /* Deep Mauve */
     text-decoration: none;
-    padding: 12px 30px;
+    padding: 14px 36px; /* Increased padding for better touch area */
     border-radius: 30px;
     display: inline-flex;
     align-items: center;
     gap: 10px; /* Space between icon and text */
-    transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
 .cta-button-about i {
@@ -367,7 +421,7 @@ header {
     }
 
     .about-text h2 {
-        font-size: 2rem; /* Adjust heading size */
+        font-size: 2.4rem; /* Adjust heading size */
     }
 
     .about-text p {
@@ -376,7 +430,7 @@ header {
 
     .cta-button-about {
         font-size: 1.2rem;
-        padding: 10px 20px;
+        padding: 12px 24px; /* Adjust padding for smaller screens */
     }
 }
 
