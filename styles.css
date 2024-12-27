@@ -628,15 +628,28 @@ header {
     }
 }
 
-/* Responsive Design */
+/* Mobile Optimized Styles */
 @media (max-width: 768px) {
-    .portfolio-item {
-        width: 180px;
-        height: 180px;
+    #portfolio {
+        padding: 30px 10px; /* Compact padding for mobile */
     }
 
     #portfolio h2 {
-        font-size: 2.2rem;
+        font-size: 2rem; /* Adjusted font size */
+    }
+
+    .portfolio-container {
+        gap: 20px; /* Reduced gap between rows */
+    }
+
+    .portfolio-item {
+        width: 140px; /* Smaller items for mobile */
+        height: 140px;
+    }
+
+    .portfolio-item::before {
+        font-size: 0.9rem; /* Smaller font for labels */
+        padding: 6px; /* Reduced padding */
     }
 }
 
