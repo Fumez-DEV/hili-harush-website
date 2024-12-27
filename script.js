@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+        // Updated with passive listeners
+        const handleScrollEvent = (e) => {
+            // Handle scrolling
+        };
+    
+        document.addEventListener('touchstart', handleScrollEvent, { passive: true });
+        document.addEventListener('touchmove', handleScrollEvent, { passive: true });
+    
+        
     // Header Scroll Effect
     const initHeaderScrollEffect = () => {
         const header = document.querySelector("header");
