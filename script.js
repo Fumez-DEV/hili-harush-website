@@ -86,14 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const question = item.querySelector(".faq-question");
 
         question.addEventListener("click", () => {
-            // Close other FAQ items
-            faqItems.forEach(i => {
-                if (i !== item) {
-                    i.classList.remove("active");
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove("active");
                 }
             });
 
-            // Toggle the current FAQ item
+            // Toggle the current item
             item.classList.toggle("active");
         });
     });

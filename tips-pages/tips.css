@@ -1,0 +1,224 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #FADADD; /* Soft pink background */
+    color: #4A4A4A; /* Charcoal Gray */
+    direction: rtl;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #B388EB; /* Deep Mauve */
+}
+
+/* Header */
+header {
+    background-color: #FFFFFF; /* White background */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4A4A4A; /* Charcoal Gray */
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #B388EB; /* Deep Mauve */
+    color: #FFFFFF; /* White */
+}
+
+/* Tip Section */
+.tip-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #FFFFFF; /* White background */
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.tip-container h1 {
+    font-family: 'Heebo', sans-serif;
+    font-size: 2.8rem;
+    color: #B388EB; /* Deep Mauve */
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tip-container p {
+    font-size: 1.4rem;
+    color: #4A4A4A; /* Charcoal Gray */
+    margin-bottom: 20px;
+}
+
+.tip-container ul,
+.tip-container ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style-position: inside;
+}
+
+.tip-container li {
+    font-size: 1.2rem;
+    color: #4A4A4A; /* Charcoal Gray */
+    margin-bottom: 10px;
+}
+
+.tip-container li strong {
+    color: #B388EB; /* Deep Mauve */
+}
+
+/* CTA Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF; /* White */
+    background-color: #B388EB; /* Deep Mauve */
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #4A4A4A; /* Charcoal Gray */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button i {
+    margin-left: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #333333; /* Dark Gray */
+    color: #FFFFFF; /* White text */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+footer p a {
+    color: #B388EB; /* Deep Mauve */
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
+}
+
+footer p a:hover {
+    color: #FFD1D1; /* Soft Pink */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .tip-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .tip-container h1 {
+        font-size: 2.2rem;
+    }
+
+    .tip-container p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
