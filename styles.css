@@ -316,9 +316,6 @@ header {
     }
 }
 
-
-
-
 /* About Section */
 #about {
     background-color: #FADADD; /* Soft Pink */
@@ -340,97 +337,79 @@ header {
 /* About Image Styling */
 .about-image img {
     width: 100%;
-    max-width: 450px; /* Keep the width limit */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     animation: fadeIn 1.5s ease-in-out;
-    object-fit: cover; /* Ensure the image scales properly */
-    aspect-ratio: 1 / 1; /* Maintain a square ratio */
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
 }
 
 /* About Text Styling */
 .about-text {
     max-width: 600px;
-    line-height: 1.6; /* Comfortable line spacing */
+    line-height: 1.6;
 }
 
 .about-text h2 {
     font-family: 'Heebo', sans-serif;
     font-size: 2.8rem;
     font-weight: bold;
-    color: #B388EB; /* Deep Mauve */
+    color: #B388EB;
     margin-bottom: 20px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .about-text p {
     font-family: 'Rubik', sans-serif;
     font-size: 1.4rem;
     margin-bottom: 20px;
-    color: #4A4A4A; /* Charcoal Gray */
+    color: #4A4A4A;
 }
 
 .cta-button-about {
     font-family: 'Rubik', sans-serif;
     font-size: 1.4rem;
     font-weight: bold;
-    color: #FFFFFF; /* White */
-    background-color: #B388EB; /* Deep Mauve */
+    color: #FFFFFF;
+    background-color: #B388EB;
     text-decoration: none;
-    padding: 14px 36px; /* Increased padding for better touch area */
+    padding: 14px 36px;
     border-radius: 30px;
     display: inline-flex;
     align-items: center;
-    gap: 10px; /* Space between icon and text */
+    gap: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
 }
 
-.cta-button-about i {
-    font-size: 1.6rem;
-}
-
 .cta-button-about:hover {
-    background-color: #4A4A4A; /* Charcoal Gray */
-    transform: translateY(-3px); /* Slight lift effect */
+    background-color: #4A4A4A;
+    transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
+/* Responsive About Section */
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* Stack items vertically on small screens */
-    }
-
-    .about-text {
-        text-align: center; /* Center text for mobile */
+        flex-direction: column;
+        text-align: center;
     }
 
     .about-text h2 {
-        font-size: 2.4rem; /* Adjust heading size */
+        font-size: 2.4rem;
     }
 
     .about-text p {
-        font-size: 1.2rem; /* Adjust paragraph size */
+        font-size: 1.2rem;
     }
 
     .cta-button-about {
         font-size: 1.2rem;
-        padding: 12px 24px; /* Adjust padding for smaller screens */
+        padding: 12px 24px;
     }
 }
+
 
 /* FAQ Section */
 #faq {
