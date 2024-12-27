@@ -29,7 +29,7 @@ This repository contains the source code for the official website of Hili Harush
 
 ## Setup Instructions
 1. Clone the repository:
-   - `git clone https://github.com/your-username/hili-harush-website.git`
+   - `git clone https://github.com/Fumez-DEV/hili-harush-website.git`
 2. Navigate to the project directory:
    - `cd hili-harush-website`
 3. Open the `index.html` file in your browser to view the website.
