@@ -1,42 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Smooth Scroll Behavior
-    const navLinks = document.querySelectorAll('.nav-links a, .cta-button, .cta-button-hero, .cta-button-about, .cta-button-pricing');
-    navLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            const targetId = link.getAttribute("href");
-            if (targetId.startsWith("#")) {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70, // Adjust offset for sticky header
-                        behavior: "smooth",
-                    });
+    const initSmoothScroll = () => {
+        const navLinks = document.querySelectorAll('.nav-links a, .cta-button, .cta-button-hero, .cta-button-about, .cta-button-pricing');
+        navLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                const targetId = link.getAttribute("href");
+                if (targetId.startsWith("#")) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70, // Adjust for sticky header
+                            behavior: "smooth",
+                        });
+                    }
                 }
-            }
+            });
         });
-    });
+    };
 
-    const header = document.querySelector("header");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
-
-    // Portfolio Item Animation
-    const portfolioItems = document.querySelectorAll(".portfolio-item");
-    portfolioItems.forEach(item => {
-        item.addEventListener("click", () => {
-            const label = item.getAttribute("data-label") || "Portfolio Item";
-            console.log(`Clicked on: ${label}`);
+    // Header Scroll Effect
+    const initHeaderScrollEffect = () => {
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", () => {
+            header.classList.toggle("scrolled", window.scrollY > 50);
         });
-    });
+    };
+
+    // Portfolio Item Click Handler
+    const initPortfolioClickHandler = () => {
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
+        portfolioItems.forEach(item => {
+            item.addEventListener("click", () => {
+                const label = item.getAttribute("data-label") || "Portfolio Item";
+                console.log(`Clicked on: ${label}`);
+            });
+        });
+    };
 
     // Lazy Loading for Portfolio Images
-    const lazyLoadImages = () => {
+    const initLazyLoading = () => {
         const images = document.querySelectorAll(".portfolio-item img");
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -47,54 +50,60 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
-
         images.forEach(img => observer.observe(img));
     };
-    lazyLoadImages();
 
-    // Contact Items Hover Effects
-    const contactItems = document.querySelectorAll(".contact-item");
-    contactItems.forEach(item => {
-        const icon = item.querySelector("i");
-        item.addEventListener("mouseenter", () => {
-            icon.style.transform = "scale(1.2)";
+    // Contact Item Hover Effects
+    const initContactHoverEffects = () => {
+        const contactItems = document.querySelectorAll(".contact-item");
+        contactItems.forEach(item => {
+            const icon = item.querySelector("i");
+            item.addEventListener("mouseenter", () => (icon.style.transform = "scale(1.2)"));
+            item.addEventListener("mouseleave", () => (icon.style.transform = "scale(1)"));
         });
-        item.addEventListener("mouseleave", () => {
-            icon.style.transform = "scale(1)";
-        });
-    });
+    };
 
-    // Highlight Section on Scroll
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
-                document.querySelectorAll(".nav-links a").forEach(link => {
-                    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+    // Highlight Navigation on Scroll
+    const initSectionHighlightOnScroll = () => {
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        document.querySelectorAll(".nav-links a").forEach(link => {
+                            link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+                        });
+                    }
                 });
-            }
-        });
-    }, { threshold: 0.6 });
-    sections.forEach(section => observer.observe(section));
-});
+            },
+            { threshold: 0.6 }
+        );
+        sections.forEach(section => observer.observe(section));
+    };
 
-document.addEventListener("DOMContentLoaded", () => {
-    const faqItems = document.querySelectorAll(".faq-item");
-
-    faqItems.forEach(item => {
-        const question = item.querySelector(".faq-question");
-
-        question.addEventListener("click", () => {
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove("active");
-                }
+    // FAQ Toggle Behavior
+    const initFaqToggle = () => {
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach(item => {
+            const question = item.querySelector(".faq-question");
+            question.addEventListener("click", () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove("active");
+                    }
+                });
+                item.classList.toggle("active");
             });
-
-            // Toggle the current item
-            item.classList.toggle("active");
         });
-    });
+    };
+
+    // Initialize all features
+    initSmoothScroll();
+    initHeaderScrollEffect();
+    initPortfolioClickHandler();
+    initLazyLoading();
+    initContactHoverEffects();
+    initSectionHighlightOnScroll();
+    initFaqToggle();
 });
