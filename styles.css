@@ -821,8 +821,8 @@ header {
 
 .contact-grid {
     display: flex;
-    justify-content: center; /* Center all items horizontally */
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px; /* Space between items */
     width: 100%;
     max-width: 1200px;
@@ -838,12 +838,10 @@ header {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers content vertically */
+    justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
 }
 
 .contact-item:hover {
@@ -877,6 +875,23 @@ header {
     color: #B388EB; /* Deep Mauve hover */
 }
 
+/* Map Container */
+.map-container {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    margin-top: 40px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+
+#my-map-display iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -901,6 +916,11 @@ header {
     .contact-item {
         width: 160px; /* Adjust width for smaller screens */
         height: 140px; /* Adjust height for smaller screens */
+    }
+
+    .map-container {
+        width: 100%;
+        height: 300px; /* Reduce height for smaller screens */
     }
 }
 
