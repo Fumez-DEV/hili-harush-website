@@ -929,6 +929,9 @@ header {
     color: #FFD1D1; /* Soft Pink */
     margin-top: 10px;
     font-style: italic;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
 }
 
 /* Menu and Legal Section */
