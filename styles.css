@@ -288,7 +288,7 @@ header {
         align-items: center;
         text-align: center;
         padding: 40px 20px;
-        height: calc(90vh - 30px);
+        height: calc(100vh - 30px);
         position: relative;
         overflow: hidden;
     }
