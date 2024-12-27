@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolioItems.forEach(item => {
         item.addEventListener("click", () => {
             const label = item.getAttribute("data-label") || "Portfolio Item";
-            alert(`Clicked on: ${label}`);
+            console.log(`Clicked on: ${label}`);
         });
     });
 
@@ -77,4 +77,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.6 });
     sections.forEach(section => observer.observe(section));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+
+        question.addEventListener("click", () => {
+            // Close other FAQ items
+            faqItems.forEach(i => {
+                if (i !== item) {
+                    i.classList.remove("active");
+                }
+            });
+
+            // Toggle the current FAQ item
+            item.classList.toggle("active");
+        });
+    });
 });
